@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:host-context(.platform-mac) .monospace,
+:host-context(.platform-mac) .source-code,
+.platform-mac .monospace,
+.platform-mac .source-code {
+    font-size: 12px !important;
+    font-family: 'Fira Code', monospace !important;
+}
+
+.platform-mac,
+:host-context(.platform-mac) {
+    --monospace-font-size: 12px !important;
+    --monospace-font-family: 'Fira Code', monospace !important;
+    --source-code-font-size: 12px !important;
+    --source-code-font-family: 'Fira Code', monospace !important;
+}
+
+.monospace,
+.source-code {
+    font-size: 12px !important;
+    font-family: 'Fira Code', monospace !important;
+}
+
+::shadow .monospace,
+::shadow .source-code {
+    font-size: 12px !important;
+    font-family: 'Fira Code', monospace !important;
+}
+
+:host-context(.platform-linux) .monospace,
+:host-context(.platform-linux) .source-code,
+body.platform-linux .monospace,
+body.platform-linux .source-code {
+    font-size: 12px !important;
+    font-family: 'Fira Code', monospace !important;
+}
+
+.tabbed-pane-header-tab {
+    min-width: 80px !important;
+    width: auto !important;
+    font-family: 'Fira Code', monospace !important;
+}
