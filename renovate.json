@@ -1,0 +1,76 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "schedule:weekly",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":semanticCommitScope(deps)",
+    ":automergeMinor"
+  ],
+  "forkProcessing": "enabled",
+  "commitMessageAction": "⬆️ Bump",
+  "commitMessageTopic": "{{depName}}",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm", "yarn", "pnpm", "deno", "bun"],
+      "addLabels": ["javascript"]
+    },
+    {
+      "matchManagers": ["composer"],
+      "addLabels": ["php"],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchManagers": ["gradle", "gradle-wrapper", "maven"],
+      "addLabels": ["java"]
+    },
+    {
+      "matchManagers": ["cargo"],
+      "addLabels": ["rust"]
+    },
+    {
+      "matchManagers": ["cocoapods", "swift"],
+      "addLabels": ["swift"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["github_actions"]
+    },
+    {
+      "matchManagers": ["pip_requirements", "pip_setup", "pipenv", "poetry"],
+      "addLabels": ["python"]
+    },
+    {
+      "matchManagers": ["nuget"],
+      "addLabels": ["dotnet"]
+    },
+    {
+      "matchManagers": ["helm-values", "helmfile", "helmsman"],
+      "addLabels": ["helm"]
+    },
+    {
+      "matchManagers": ["terraform", "terraform-version"],
+      "addLabels": ["terraform"]
+    },
+    {
+      "matchManagers": ["gomod"],
+      "addLabels": ["go"]
+    },
+    {
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "addLabels": ["docker"],
+      "pinDigests": false
+    },
+    {
+      "matchManagers": ["bundler"],
+      "addLabels": ["ruby"]
+    },
+    {
+      "matchDepTypes": ["action"],
+      "pinDigests": false
+    }
+  ],
+  "timezone": "Europe/Stockholm"
+}
